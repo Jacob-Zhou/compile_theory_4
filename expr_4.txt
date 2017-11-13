@@ -1,0 +1,34 @@
+0 $program -> $block
+
+1 $block -> { $stmts }
+
+2 $stmts -> $stmt $stmts
+
+3 $stmts -> NULL
+
+4 $stmt -> ID = $expr ;
+
+5 $stmt -> WHILE ( $bool ) $stmt
+
+6 $stmt -> $block
+
+7 $bool -> $term <= $term
+
+8 $bool -> $term >= $term
+
+9 $bool -> $term
+
+10 $expr -> $expr + $term
+
+11 $expr -> $expr - $term
+
+12 $expr -> $term
+
+13 $term -> ID
+
+14 $term -> NUM
+
+TokenKind: WHILE, ID, NUM, {, }, (, ), <, >, =, +, -, ;
+ID: <_[_a-zA-Z0-9]*>
+NUM: <[0-9]+(.[0-9]+)?>
+
